@@ -26,7 +26,6 @@ class LottoCalculator {
   #calculateRateOfRevenue(revenue, lottosCount) {
     return ((revenue / (lottosCount * NUMBER.LOTTO_PRICE)) * 100).toFixed(1);
   }
-
 }
 
 export default LottoCalculator;

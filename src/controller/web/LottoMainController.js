@@ -2,7 +2,7 @@ import { $, $$ } from '../../util/domSelector';
 import LottoMoneyController from './LottoMoneyController';
 import WinLottoController from './WinLottoController';
 import LottoResultModalController from './LottoResultModalController';
-import { renderError, resetElementValue } from '../../util/view';
+import { hideElement, renderError, resetElementValue } from '../../util/view';
 import WinLottoView from '../../view/web/WinLottoView';
 import MyLottoInfoView from '../../view/web/MyLottoInfoView';
 import LottoResultModalView from '../../view/web/LottoResultModalView';
@@ -55,6 +55,7 @@ class LottoMainController {
     const [winNumbers, bonusNumber] = this.winLottoController.seperateLottoNumbers();
     const winLotto = this.winLottoController.makeWinLotto(winNumbers, bonusNumber);
     this.lottoResultModalController.showWinResults(this.lottos, winLotto);
+    hideElement($('#win-lotto-error'));
   }
 
   restartLotto() {
